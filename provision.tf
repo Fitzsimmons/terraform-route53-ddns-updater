@@ -12,12 +12,8 @@ data "http" "external_ip_address" {
   url = "https://icanhazip.com"
 }
 
-data "aws_route53_zone" "selected" {
-  name = "${var.domain_name}"
-}
-
 resource "aws_route53_record" "root" {
-  zone_id = "${data.aws_route53_zone.selected.id}"
+  zone_id = "${var.zone_id}"
   name = "${var.domain_name}"
   type = "A"
   ttl = "1"
