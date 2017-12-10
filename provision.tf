@@ -1,6 +1,7 @@
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
 variable "domain_name" {}
+variable "zone_id" {}
 
 provider "aws" {
   region = "us-east-1"
