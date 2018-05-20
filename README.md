@@ -57,4 +57,4 @@ If everything looks good, you'll want to run `terraform apply -var-file variable
 
 * Windows: https://superuser.com/a/403597/173153 in combination with the provided batch file: [apply.bat](apply.bat)
 	* TODO: If anyone knows how to make this log somewhere useful on windows, let me know or submit a pull request
-* UNIX: Add something like this to your crontab `5 * * * * /home/user/terraform-route53-ddns-updater/apply.sh`
+* UNIX: Add something like this to your crontab `*/5 * * * * /home/user/terraform-route53-ddns-updater/apply.sh`
