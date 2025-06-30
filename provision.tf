@@ -3,6 +3,15 @@ variable "aws_secret_key" {}
 variable "domain_name" {}
 variable "zone_id" {}
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
   access_key = "${var.aws_access_key}"
@@ -18,5 +27,5 @@ resource "aws_route53_record" "root" {
   name = "${var.domain_name}"
   type = "A"
   ttl = "1"
-  records = ["${trimspace(data.http.external_ip_address.body)}"]
+  records = ["${trimspace(data.http.external_ip_address.response_body)}"]
 }
