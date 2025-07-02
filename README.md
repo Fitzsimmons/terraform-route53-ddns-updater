@@ -20,7 +20,9 @@ Find the route53 zone_id for the zone in question. You'll need this in two place
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "route53:GetChange"
+                "route53:GetChange",
+                "route53:ListHostedZones",
+                "route53:ListHostedZonesByName"
             ],
             "Resource": "*"
         },
