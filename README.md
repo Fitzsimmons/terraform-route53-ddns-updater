@@ -49,7 +49,7 @@ Replace all the values. `aws_access_key`, `aws_secret_key`, and `zone_id` you sh
 Use these commands to see if your configuration is set up properly:
 
 ```bash
-terraform init -get=true -get-plugins=true -upgrade=true
+terraform init
 terraform plan -var-file variables.tfvars.json
 ```
 
